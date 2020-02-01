@@ -13,24 +13,34 @@ export const Container = styled.div`
 
 export const Flexbox = styled.div`
   display: flex;
+  justify-content: center;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 export const Image = styled.img`
   width: 150px;
   height: 100px;
+  margin: auto;
 `;
 export const Section = styled.div`
   @media (max-width: 600px) {
     padding-top: 0;
+    margin: auto;
+    width: 150px;
   }
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 10px 15px 5px;
+  // padding: 10px 17px 5px;
   font-family: "Gayathri";
+  margin-left: 15px;
 `;
 export const DateSection = styled(Section)`
   @media (max-width: 600px) {
-    padding: 10px 0 0 13px;
+    // padding: 10px 0 0 13px;
+    margin: 10px auto 0;
     flex-direction: row;
     justify-content: flex-start;
   }
@@ -38,7 +48,7 @@ export const DateSection = styled(Section)`
 
 export const DateSpan = styled.span`
   font-size: 1.3em;
-  margin: 0 2px;
+  margin-right: 4px;
 `;
 export const DayAndTime = styled.span`
   color: #e838ff;

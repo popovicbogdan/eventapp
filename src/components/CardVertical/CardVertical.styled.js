@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export const Card = styled.div.attrs({ className: "card hoverable" })`
   && {
-    max-width: 290px;
-    max-height: 290px;
     margin: 10px 0;
   }
 `;
@@ -21,15 +19,11 @@ export const CardImage = styled.div.attrs({ className: "card-image" })`
 
 export const Image = styled.img`
   && {
-    @media (max-width: 600px) {
-      height: 30vw;
-    }
-    height: 20vw;
+    height: 25vh;
+    max-height: 260px;
+    min-height: 150px;
     width: 100%;
     object-fit: cover;
-    @media (min-width: 993px) {
-      height: 13vw;
-    }
   }
 `;
 

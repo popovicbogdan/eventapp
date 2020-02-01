@@ -6,7 +6,7 @@ export const SearchBarContainer = styled.div`
   width: 45%;
   border-radius: 10px;
   @media (max-width: 750px) {
-    width: 70%;
+    width: 80%;
 `;
 
 export const Input = styled.input.attrs({ className: "browser-default" })`
