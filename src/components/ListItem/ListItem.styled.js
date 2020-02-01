@@ -33,13 +33,12 @@ export const Section = styled.div`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  // padding: 10px 17px 5px;
+
   font-family: "Gayathri";
   margin-left: 15px;
 `;
 export const DateSection = styled(Section)`
   @media (max-width: 600px) {
-    // padding: 10px 0 0 13px;
     margin: 10px auto 0;
     flex-direction: row;
     justify-content: flex-start;
