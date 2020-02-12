@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render correclty 1`] = `
+<button
+  className="sc-AykKC hBViMd btn"
+  data-testid="button"
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  type="button"
+>
+  <i
+    className="sc-AykKD fZGMjR material-icons"
+    data-testid="icon"
+  >
+    search
+  </i>
+  Text
+</button>
+`;

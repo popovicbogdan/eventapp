@@ -40,24 +40,37 @@ const Items = () => {
     setItms(sortedItems);
   }, [items]);
 
-  const sortDescending = () => {
+  const sortDescending = useCallback(() => {
     const sortedItems = orderBy(items, ["width", "height"]).reverse();
     setItms(sortedItems);
-  };
+  }, [items]);
 
-  const filteredItems = itms.filter(item =>
-    Object.values(item).some(val =>
-      val
-        .toString()
-        .toLowerCase()
-        .includes(search)
-    )
-  );
+  // const filteredItems = itms.filter(item =>
+  //   Object.values(item).some(val =>
+  //     val
+  //       .toString()
+  //       .toLowerCase()
+  //       .includes(search)
+  //   )
+  // );
+  const filterItems = (items, searchTerm) => {
+    const filteredItems = items.filter(item =>
+      Object.values(item).some(val =>
+        val
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.toLowerCase())
+      )
+    );
+    return filteredItems;
+  };
+  const sectionOneItems = filterItems(itms.slice(0, 6), search);
+  const sectionTwoItems = filterItems(itms.slice(6, 9), search);
   return (
     <Container>
       <Title>Hot tickets</Title>
       <Hr />
-      <Section items={filteredItems.slice(0, 6)} viewType={viewOne} />
+      <Section items={sectionOneItems} viewType={viewOne} />
       <ButtonStyled
         className="btn btn-small right"
         onClick={e => changeViewType(viewOne, setViewOne)}
@@ -66,7 +79,7 @@ const Items = () => {
       </ButtonStyled>
       <Title>Upcoming events</Title>
       <Hr />
-      <Section items={filteredItems.slice(6, 9)} viewType={viewTwo} />
+      <Section items={sectionTwoItems} viewType={viewTwo} />
       <ButtonStyled
         className="btn btn-small right"
         onClick={e => changeViewType(viewTwo, setViewTwo)}

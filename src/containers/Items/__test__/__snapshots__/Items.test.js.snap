@@ -1,0 +1,240 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Items /> should match snapshot 1`] = `
+<div
+  className="sc-AykKE dGIjfh container"
+>
+  <h5
+    className="sc-fzXfMx oSHWh"
+  >
+    <nobr>
+      Hot tickets
+    </nobr>
+  </h5>
+  <hr
+    className="sc-AykKF bFqZwE"
+  />
+  <div
+    className="sc-fzXfMw jtMUjW row"
+  >
+    <div
+      className="col s12 m6 l4"
+    >
+      <a>
+        <div
+          className="sc-AykKH ihxFCz card hoverable"
+        >
+          <div
+            className="sc-AykKI grNqlY card-image"
+          >
+            <img
+              alt=""
+              className="sc-AykKJ iuCgpc"
+            />
+            <p
+              className="author"
+            >
+              Brandon Cooper
+            </p>
+          </div>
+          <div
+            className="sc-AykKK gkWpsO card-content"
+          >
+            <p>
+              <i
+                className="sc-AykKD fZGMjR material-icons"
+                data-testid="icon"
+              >
+                event
+              </i>
+              <span
+                className="height"
+              >
+                Height: 
+                1080
+              </span>
+            </p>
+            <p>
+              <i
+                className="sc-AykKD fZGMjR material-icons"
+                data-testid="icon"
+              >
+                deck
+              </i>
+              <span
+                className="width"
+              >
+                Width: 
+                1900
+              </span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="col s12 m6 l4"
+    >
+      <a>
+        <div
+          className="sc-AykKH ihxFCz card hoverable"
+        >
+          <div
+            className="sc-AykKI grNqlY card-image"
+          >
+            <img
+              alt=""
+              className="sc-AykKJ iuCgpc"
+            />
+            <p
+              className="author"
+            >
+              Alison Burgers
+            </p>
+          </div>
+          <div
+            className="sc-AykKK gkWpsO card-content"
+          >
+            <p>
+              <i
+                className="sc-AykKD fZGMjR material-icons"
+                data-testid="icon"
+              >
+                event
+              </i>
+              <span
+                className="height"
+              >
+                Height: 
+                1180
+              </span>
+            </p>
+            <p>
+              <i
+                className="sc-AykKD fZGMjR material-icons"
+                data-testid="icon"
+              >
+                deck
+              </i>
+              <span
+                className="width"
+              >
+                Width: 
+                1912
+              </span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      className="col s12 m6 l4"
+    >
+      <a>
+        <div
+          className="sc-AykKH ihxFCz card hoverable"
+        >
+          <div
+            className="sc-AykKI grNqlY card-image"
+          >
+            <img
+              alt=""
+              className="sc-AykKJ iuCgpc"
+            />
+            <p
+              className="author"
+            >
+              Kent Cooper
+            </p>
+          </div>
+          <div
+            className="sc-AykKK gkWpsO card-content"
+          >
+            <p>
+              <i
+                className="sc-AykKD fZGMjR material-icons"
+                data-testid="icon"
+              >
+                event
+              </i>
+              <span
+                className="height"
+              >
+                Height: 
+                1230
+              </span>
+            </p>
+            <p>
+              <i
+                className="sc-AykKD fZGMjR material-icons"
+                data-testid="icon"
+              >
+                deck
+              </i>
+              <span
+                className="width"
+              >
+                Width: 
+                1915
+              </span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <button
+    className="sc-AykKC hBViMd sc-AykKG hDsgAj btn btn-small right"
+    data-testid="button"
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="sc-AykKD fZGMjR material-icons"
+      data-testid="icon"
+    >
+      list
+    </i>
+  </button>
+  <h5
+    className="sc-fzXfMx oSHWh"
+  >
+    <nobr>
+      Upcoming events
+    </nobr>
+  </h5>
+  <hr
+    className="sc-AykKF bFqZwE"
+  />
+  <ul />
+  <button
+    className="sc-AykKC hBViMd sc-AykKG hDsgAj btn btn-small right"
+    data-testid="button"
+    onClick={[Function]}
+    type="button"
+  >
+    <i
+      className="sc-AykKD fZGMjR material-icons"
+      data-testid="icon"
+    >
+      grid_on
+    </i>
+  </button>
+  <button
+    className="sc-AykKC hBViMd sc-AykKG hDsgAj btn btn-small right"
+    data-testid="button"
+    onClick={[Function]}
+    type="button"
+  >
+    asc
+  </button>
+  <button
+    className="sc-AykKC hBViMd sc-AykKG hDsgAj btn btn-small right"
+    data-testid="button"
+    onClick={[Function]}
+    type="button"
+  >
+    desc
+  </button>
+</div>
+`;

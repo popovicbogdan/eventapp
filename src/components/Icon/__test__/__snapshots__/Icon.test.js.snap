@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Icon/> should match snapshot 1`] = `
+<i
+  className="sc-AykKC fNAoVs material-icons"
+  data-testid="icon"
+>
+  search
+</i>
+`;

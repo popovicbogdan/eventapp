@@ -12,16 +12,16 @@ const CardVertical = ({ item }) => {
         <Card>
           <CardImage>
             <Image src={download_url} alt="" />
-            <p>{author}</p>
+            <p className="author">{author}</p>
           </CardImage>
           <CardContent>
             <p>
               <Icon>event</Icon>
-              <span>Height: {height}</span>
+              <span className="height">Height: {height}</span>
             </p>
             <p>
               <Icon>deck</Icon>
-              <span>Width: {width}</span>
+              <span className="width">Width: {width}</span>
             </p>
           </CardContent>
         </Card>

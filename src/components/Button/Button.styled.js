@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const ButtonStyled = styled.button.attrs({
-  type: "button"
+  type: "button",
+  "data-testid": "button"
 })`
   display: inline-flex;
   justify-content: center;
