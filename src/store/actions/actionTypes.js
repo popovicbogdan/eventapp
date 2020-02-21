@@ -1,3 +1,14 @@
 export const GET_ITEMS = "GET_ITEMS";
 
 export const SET_SEARCH_INFO = "SET_SEARCH_INFO";
+
+//colors action types
+export const CHANGE_BG_COLOR_SUCCESS = "CHANGE_BG_COLOR_SUCCESS";
+export const CHANGE_BG_COLOR_FAIL = "CHANGE_BG_COLOR_FAIL";
+
+//custom events types
+export const CREATE_NEW_EVENT = "CREATE_NEW_EVENT";
+export const REMOVE_CUSTOM_EVENT = "REMOVE_CUSTOM_EVENT";
+export const SET_CUSTOM_EVENT_AUTHOR = "SET_CUSTOM_EVENT_AUTHOR";
+export const SET_DATE = "SET_DATE";
+export const CANCEL_CUSTOM_EVENTS = "CANCEL_CUSTOM_EVENTS";

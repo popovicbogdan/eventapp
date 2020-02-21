@@ -45,14 +45,6 @@ const Items = () => {
     setItms(sortedItems);
   }, [items]);
 
-  // const filteredItems = itms.filter(item =>
-  //   Object.values(item).some(val =>
-  //     val
-  //       .toString()
-  //       .toLowerCase()
-  //       .includes(search)
-  //   )
-  // );
   const filterItems = (items, searchTerm) => {
     const filteredItems = items.filter(item =>
       Object.values(item).some(val =>
@@ -65,7 +57,9 @@ const Items = () => {
     return filteredItems;
   };
   const sectionOneItems = filterItems(itms.slice(0, 6), search);
+
   const sectionTwoItems = filterItems(itms.slice(6, 9), search);
+
   return (
     <Container>
       <Title>Hot tickets</Title>

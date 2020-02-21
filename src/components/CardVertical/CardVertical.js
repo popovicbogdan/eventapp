@@ -5,6 +5,7 @@ import Icon from "../../components/Icon/Icon";
 
 const CardVertical = ({ item }) => {
   const { height, width, download_url, url, author } = item;
+  console.log("HEIGHTH", typeof height);
 
   return (
     <div className="col s12 m6 l4">

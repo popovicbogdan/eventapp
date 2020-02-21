@@ -2,13 +2,17 @@ import React from "react";
 import Header from "./containers/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Items from "./containers/Items/Items";
+import Customizer from "./containers/Customizer/Customizer";
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Items />
-      <Footer />
+      <Customizer />
+      <div className="site">
+        <Header />
+        <Items />
+        <Footer />
+      </div>
     </div>
   );
 }
