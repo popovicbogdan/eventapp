@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, connect } from "react-redux";
 import { orderBy } from "lodash";
 import { getItems } from "../../store/actions/actionCreators";
 import { Container, Hr, ButtonStyled } from "./Items.styled";
@@ -10,16 +10,12 @@ import Icon from "../../components/Icon/Icon";
 const Items = () => {
   const [viewOne, setViewOne] = useState("grid");
   const [viewTwo, setViewTwo] = useState("list");
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getItems());
-  }, [dispatch]);
 
   const search = useSelector(state => state.items.searchInfo);
   const items = useSelector(state => state.items.items);
 
   const [itms, setItms] = useState(items || []);
+  console.log(itms);
 
   useEffect(() => {
     setItms(items);
@@ -57,8 +53,11 @@ const Items = () => {
     return filteredItems;
   };
   const sectionOneItems = filterItems(itms.slice(0, 6), search);
+  console.log(sectionOneItems);
 
   const sectionTwoItems = filterItems(itms.slice(6, 9), search);
+
+  console.log(sectionTwoItems);
 
   return (
     <Container>
@@ -91,4 +90,8 @@ const Items = () => {
   );
 };
 
+// const Wrapper = connect(state => ({
+//   items: state.items.items,
+//   search: state.items.searchInfo
+// }))(Items);
 export default Items;

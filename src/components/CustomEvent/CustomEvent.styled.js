@@ -12,7 +12,7 @@ export const TopPart = styled.div`
   align-items: center;
 `;
 export const BottomPart = styled.div`
-  display: ${({ isHidden }) => (isHidden === true ? "" : "none")};
+  display: ${({ isHidden }) => (isHidden ? "" : "none")};
 `;
 
 export const NewEventCont = styled.div`

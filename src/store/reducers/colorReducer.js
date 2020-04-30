@@ -3,31 +3,34 @@ import {
   CHANGE_BG_COLOR_FAIL
   //   CHANGE_TEXT_COLOR_SUCCESS,
   //   CHANGE_TEXT_COLOR_FAIL
-} from "../actions/actionTypes";
+} from '../actions/actionTypes';
+import produce from 'immer';
+import { componentColor, textColor } from './contants';
 
 const initState = {
-  componentColor: "000000",
-  textColor: "800080"
+  componentColor: componentColor,
+  textColor: textColor
 };
 
-export function primaryColorReducer(state = initState, action) {
-  switch (action.type) {
-    case CHANGE_BG_COLOR_SUCCESS:
-      console.log("SUCCESS");
-
-      return {
-        ...state,
-        componentColor: action.payload
-      };
-    case CHANGE_BG_COLOR_FAIL:
-      console.log("FAIL");
-
-      return {
-        ...state,
-        componentColor: "000000"
-      };
-
-    default:
-      return state;
-  }
+function primaryColorReducer(state = initState, action) {
+  return produce(state, (draft) => {
+    switch (action.type) {
+      case CHANGE_BG_COLOR_SUCCESS:
+        handleChangeBgColorSuccess(draft, action);
+        break;
+      case CHANGE_BG_COLOR_FAIL:
+        handleChangeBgColorFail(draft);
+        break;
+    }
+  });
 }
+
+function handleChangeBgColorSuccess(state, { payload }) {
+  state.componentColor = payload;
+}
+
+function handleChangeBgColorFail(state) {
+  state.componentColor = componentColor;
+}
+
+export default primaryColorReducer;

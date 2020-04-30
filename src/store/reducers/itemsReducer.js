@@ -6,65 +6,78 @@ import {
   SET_CUSTOM_EVENT_AUTHOR,
   SET_DATE,
   CANCEL_CUSTOM_EVENTS
-} from "../actions/actionTypes";
+} from '../actions/actionTypes';
 
-const initState = { items: [], searchInfo: "", filteredItems: [] };
+import produce from 'immer';
+
+const initState = {
+  items: [],
+  searchInfo: ''
+};
 
 function itemsReducer(state = initState, action) {
-  let eventsList = [...state.items];
-  switch (action.type) {
-    case GET_ITEMS:
-      return {
-        ...state,
-        items: action.payload
-      };
-    case SET_SEARCH_INFO:
-      return {
-        ...state,
-        searchInfo: action.payload
-      };
-    case CREATE_NEW_EVENT:
-      eventsList.unshift({
-        isCustom: true,
-        id: action.id,
-        author: "",
-        width: 0,
-        height: 0,
-        url: "",
-        download_url: ""
-      });
-      return {
-        ...state,
-        items: eventsList
-      };
-    case REMOVE_CUSTOM_EVENT:
-      let newItems = eventsList.filter(item => item.id !== action.id);
-      return {
-        ...state,
-        items: newItems
-      };
-    case CANCEL_CUSTOM_EVENTS:
-      return {
-        ...state,
-        items: [...eventsList.filter(item => !item.isCustom)]
-      };
-    case SET_CUSTOM_EVENT_AUTHOR:
-      eventsList[0] = { ...eventsList[0], author: action.payload };
-      return {
-        ...state,
-        items: eventsList
-      };
-    case SET_DATE:
-      eventsList.find(
-        item => item.id === action.id
-      ).height = action.payload.toLocaleString();
-
-      return {
-        ...state,
-        items: eventsList
-      };
-    default:
-      return state;
-  }
+  return produce(state, (draft) => {
+    switch (action.type) {
+      case GET_ITEMS:
+        handleGetItems(draft, action);
+        break;
+      case SET_SEARCH_INFO:
+        handleSetSearchInfo(draft, action);
+        break;
+      case CREATE_NEW_EVENT:
+        handleCreateNewEvent(draft, action);
+        break;
+      case REMOVE_CUSTOM_EVENT:
+        handleRemoveCustomEvent(draft, action);
+        break;
+      case CANCEL_CUSTOM_EVENTS:
+        draft.items = draft.items.filter((item) => !item.isCustom);
+        break;
+      case SET_CUSTOM_EVENT_AUTHOR:
+        handleSetCustomEventAuthor(draft, action);
+        break;
+      case SET_DATE:
+        handeSetCustomEventDate(draft, action);
+        break;
+      default:
+        return state;
+    }
+  });
 }
+
+function handleGetItems(state, { payload }) {
+  Object.assign(state, { items: payload });
+}
+
+function handleSetSearchInfo(state, { payload }) {
+  Object.assign(state, { searchInfo: payload });
+}
+
+function handleSetCustomEventAuthor(state, { payload, id }) {
+  let item = state.items.find((item) => item.id === id);
+  item.author = payload;
+}
+
+function handleRemoveCustomEvent(state, { id }) {
+  state.items = state.items.filter((item) => item.id !== id);
+}
+
+function handleCreateNewEvent(state, { id }) {
+  const newEvent = {
+    isCustom: true,
+    id: id,
+    author: '',
+    width: 0,
+    height: 0,
+    url: '',
+    download_url: ''
+  };
+  state.items.unshift(newEvent);
+}
+
+function handeSetCustomEventDate(state, { payload, id }) {
+  let item = state.items.find((item) => item.id === id);
+  item.height = payload.toLocaleString();
+}
+
 export default itemsReducer;
