@@ -1,7 +1,7 @@
-import styled from "styled-components";
-import Button from "../../components/Button/Button";
+import styled from 'styled-components';
+import Button from '../../components/Button/Button';
 
-export const Container = styled.div.attrs({ className: "container" })`
+export const Container = styled.div.attrs({ className: 'container' })`
   background: white;
   @media (max-width: 600px) {
     width: 70%;
@@ -18,4 +18,9 @@ export const ButtonStyled = styled(Button)`
   margin-right: 10px;
   margin-bottom: 15px;
   height: 36px;
+`;
+
+export const IconsContainer = styled.div`
+  display: flex;
+  flex-grow: 1;
 `;
